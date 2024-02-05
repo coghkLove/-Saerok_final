@@ -21,7 +21,7 @@ public class OrderController {
     public OrderController(OrderService orderService) {
         this.orderService = orderService;
     }
-
+    //주문관련
     @GetMapping("/orders")
     public String listOrders(Model model) {
         List<OrderList> orders = orderService.findAllOrderLists();
