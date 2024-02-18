@@ -5,8 +5,9 @@
 ##  프로젝트 개요 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Laptop.png" alt="Laptop" width="30" height="30" />
 
 - 화장품 회사의 업무 프로세스를 관리하고 지점과의 협업을 위한 그룹웨어
-<br>
 
+
+  
 ##  팀원 소개 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People%20with%20professions/Woman%20Technologist%20Light%20Skin%20Tone.png" alt="Woman Technologist Light Skin Tone" width="35" height="35" /> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People%20with%20professions/Man%20Technologist%20Light%20Skin%20Tone.png" alt="Man Technologist Light Skin Tone" width="35" height="35" />
 
 |메인화면/근태/<br>일정관리|로그인/마이페이지/<br>사원관리|쪽지/게시판|매출관리/지점관리|전자결재|
