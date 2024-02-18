@@ -49,7 +49,7 @@
 
 ##  ERD
 
-<img src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/1286c797-692f-476a-a523-03e21739f87d"/> 
+<img src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/d796eb63-eac7-4761-abec-1c466401243a"/> 
 
 ##  프로젝트 구성 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bookmark%20Tabs.png" alt="Bookmark Tabs" width="30" height="30" />
 
