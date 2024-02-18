@@ -47,18 +47,18 @@
 ![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)
 ![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white) -->
 
-##  ERD
+##  ERD <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Crayon.png" alt="Crayon" width="30" height="30" />
 
 <img src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/d796eb63-eac7-4761-abec-1c466401243a"/> 
 
 ##  프로젝트 구성 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bookmark%20Tabs.png" alt="Bookmark Tabs" width="30" height="30" />
 
 <details>
-<summary>로그인</summary>
+<summary>로그인 </summary>
 </details>
 
 <details>
-<summary>메인화면</summary>
+<summary>메인화면 </summary>
 </details>
 
 <details>
