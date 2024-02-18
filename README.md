@@ -50,16 +50,15 @@
 쪽지<br>
 게시판<br>
 <details><summary>지점관리</summary>
-- 매출현황
-- 지점별매출
-- 발주목록
-- 지점조회 
+- 매출현황<br>
+- 지점별매출<br>
+- 발주목록<br>
+- 지점조회<br>
 </details>
-<br>
 <details><summary>점주전용</summary>
-- 매출관리
-- 재고목록
-- 발주신청
-- 발주목록
+- 매출관리<br>
+- 재고목록<br>
+- 발주신청<br>
+- 발주목록<br>
 </details>  
 전자결재
