@@ -14,3 +14,6 @@
 | <img src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/a7ecb8ab-3c90-43be-83ec-ec07decaef8a" width="180" height="180"/> | <img src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/bc69cf01-6cd1-4649-8e43-7a0fd9fe7c7d" width="180" height="180"/> | <img src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/9854b646-e810-4b91-a30d-3d5c48ba613c" width="180" height="180"/> | <img src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/57f1c575-7ca3-4413-812a-9d0395ac68ce" width="180" height="180"/> | <img src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/5abe4eed-4059-4785-b9ca-634a615b0c4d" width="180" height="180"/> 
 | 오지영(팀장)|이지혜(팀원)|김도영(팀원)|유채화(팀원)|홍정재(팀원)|
 
+
+##  프로젝트 일정 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Spiral%20Calendar.png" alt="Spiral Calendar" width="25" height="25" />
+
