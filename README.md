@@ -40,30 +40,26 @@
 ![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white) -->
 
 ##  프로젝트 구성 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bookmark%20Tabs.png" alt="Bookmark Tabs" width="30" height="30" />
+
+메인화면<br>
+근태관리 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Alarm%20Clock.png" alt="Alarm Clock" width="25" height="25" /><br>
+일정관리<br>
+로그인<br>
+마이페이지<br>
+사원관리<br>
+쪽지<br>
+게시판<br>
 <details><summary>지점관리</summary>
-+매출현황
-+지점별매출
-+발주목록
-+지점조회
-</details>  
-메인화면
-근태관리 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Alarm%20Clock.png" alt="Alarm Clock" width="25" height="25" />
-일정관리
-로그인
-마이페이지
-사원관리
-쪽지
-게시판
-<details><summary>지점관리</summary>
-+매출현황
-+지점별매출
-+발주목록
-+지점조회
+- 매출현황
+- 지점별매출
+- 발주목록
+- 지점조회 
 </details>
+<br>
 <details><summary>점주전용</summary>
-+매출관리
-+재고목록
-+발주신청
-+발주목록
+- 매출관리
+- 재고목록
+- 발주신청
+- 발주목록
 </details>  
 전자결재
