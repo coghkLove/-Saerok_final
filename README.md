@@ -78,7 +78,7 @@
 </details>
 
 <details>
-<summary>쪽자</summary>
+<summary>쪽지</summary>
 </details>
 
 <details>
