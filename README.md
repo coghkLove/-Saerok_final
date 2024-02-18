@@ -1,5 +1,5 @@
 <div align="center">
-<h2>[2024] Team SAEROK 🍀</h2>
+<h2>[2024] Team SAEROK <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Four%20Leaf%20Clover.png" alt="Four Leaf Clover" width="25" height="25" /></h2>
 </div>
 
 ##  프로젝트 개요 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Laptop.png" alt="Laptop" width="40" height="40" />
