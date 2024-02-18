@@ -41,6 +41,8 @@
 
 ##  ERD
 
+<img src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/1286c797-692f-476a-a523-03e21739f87d"/> 
+
 ##  프로젝트 구성 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bookmark%20Tabs.png" alt="Bookmark Tabs" width="30" height="30" />
 
 메인화면<br>
@@ -51,19 +53,25 @@
 사원관리<br>
 쪽지<br>
 게시판<br>
-<details><summary>지점관리</summary>
-- 매출현황<br>
-- 지점별매출<br>
-- 발주목록<br>
-- 지점조회<br>
+
+<details>
+  <summary>지점관리</summary>
+  
+* ##### 매출현황
+* ##### 지점별매출
+* ##### 발주목록
+* ##### 지점조회
+  
 </details>
+
 <details><summary>점주전용</summary>
-- 매출관리<br>
-- 재고목록<br>
-- 발주신청<br>
-- 발주목록<br>
+  
+* #####  매출관리<br>
+* #####  재고목록<br>
+* #####  발주신청<br>
+* #####  발주목록<br>
+  
 </details>
 <br>
 전자결재
 
-## 
