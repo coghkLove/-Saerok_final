@@ -60,5 +60,6 @@
 - 재고목록<br>
 - 발주신청<br>
 - 발주목록<br>
-</details>  
+</details>
+<br>
 전자결재
