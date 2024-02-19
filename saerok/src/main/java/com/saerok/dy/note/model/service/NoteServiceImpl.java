@@ -41,7 +41,7 @@ public class NoteServiceImpl implements NoteService {
 	@Transactional
 	public boolean sendNote(Note note) {
 		int result = dao.insertNote(session, note);
-		return result > 0; // 삼항 연산자로 변경하여 간결하게 표현
+		return result > 0;
 	}
 
 	// 쪽지 삭제
