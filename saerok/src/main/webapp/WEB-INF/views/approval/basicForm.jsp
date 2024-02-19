@@ -12,10 +12,9 @@
 <jsp:include page="/WEB-INF/views/common/header.jsp">
 	<jsp:param value="품의서" name="title" />
 </jsp:include>
-<!--ajax수정중  -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-<!-- 코드 정리111 -->
+<!-- 코드 정리 -->
 <!-- Modal-->
 <div class="modal fade" id="testModal" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalLabel" aria-hidden="true">
