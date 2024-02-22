@@ -124,7 +124,6 @@
 				<button type="button"
 					class="btn btn-primary material-symbols-outlined" id="send-btn">보내기</button>
 			</div>
-
 		</div>
 	</div>
 </div>
@@ -138,8 +137,7 @@
             paging: true
         });
 
-
-
+        // send 버튼 기능 구현
         $('#send-btn').click(function () {
             var recipientName = $('#recipient-name').val();
             var messageText = $('#message-text').val();
