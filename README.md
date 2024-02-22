@@ -78,10 +78,17 @@
 <details>
 <summary>근태관리 <!--<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Alarm%20Clock.png" alt="Alarm Clock" width="25" height="25" />-->
 </summary>
+  
+* ##### 출/퇴근 버튼 누르면 화면에 시간 출력
+* ##### 저장된 출/퇴근 시간 날짜별로 확인 가능
+* ##### 하루 근무 누적 시간 계산
 </details>
 
 <details>
 <summary>일정관리</summary>
+  
+* ##### 날짜를 누르면 개인/부서 일정 등록 가능
+* ##### 개인/부서 일정 구분되어 출력
 </details>
 
 <details>
