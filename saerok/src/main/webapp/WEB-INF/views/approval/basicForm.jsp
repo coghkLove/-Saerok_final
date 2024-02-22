@@ -10,7 +10,7 @@
 	value="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal }" />
 
 <jsp:include page="/WEB-INF/views/common/header.jsp">
-	<jsp:param value="품의서" name="title" />
+	<jsp:param value="일반품의서" name="title" />
 </jsp:include>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
