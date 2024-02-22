@@ -24,7 +24,4 @@ public interface NoteService {
 
 	// 쪽지 삭제
 	int deleteNote(Note noteNo);
-	
-	
-	
 }
