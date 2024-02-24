@@ -69,6 +69,9 @@
 
 <details>
 <summary>메인화면 </summary>
+
+* ##### 출/퇴근버튼, 게시판, 전자결재, 일정, 매출추이 그래프 화면에 출력
+  
 </details>
 
 <details>
