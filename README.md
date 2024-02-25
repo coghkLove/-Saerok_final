@@ -17,6 +17,7 @@
 
 ##  프로젝트 일정 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Spiral%20Calendar.png" alt="Spiral Calendar" width="30" height="30" />
 
+- 2023/11/24 ~ 2024/01/25
 <img src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/05ce5131-5fc6-4100-97c7-7b11269a5d8a">
 
 ##  기술 스택 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Rocket" width="30" height="30" />
