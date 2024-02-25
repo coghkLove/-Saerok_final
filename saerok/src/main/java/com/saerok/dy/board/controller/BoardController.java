@@ -64,7 +64,7 @@ public class BoardController {
 			// 게시글 저장 후 목록 불러오기
 			List<Board> boardList = boardService.boardList();
 			model.addAttribute("boardList", boardList);
-			model.addAttribute("msg", "새로운 게시글을 등록하였습니다.");
+			model.addAttribute("msg", "new ! 게시글을 등록하였습니다.");
 			model.addAttribute("loc", "board/boardlist");
 		} catch (Exception e) {
 			model.addAttribute("msg", "게시글을 다시 작성해주세요.");
