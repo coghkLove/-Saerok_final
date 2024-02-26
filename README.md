@@ -16,6 +16,9 @@
 | [오지영(팀장)](https://github.com/jjiyeong)|[이지혜(팀원)](https://github.com/devjh502)|[김도영(팀원)](https://github.com/devDYoung)|[유채화(팀원)](https://github.com/coghkLove)|[홍정재(팀원)](https://github.com/23testdev)|
 
 ##  프로젝트 일정 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Spiral%20Calendar.png" alt="Spiral Calendar" width="30" height="30" />
+<br>
+
+* 2023/11/24 ~ 2024/01/25
 
 <img src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/05ce5131-5fc6-4100-97c7-7b11269a5d8a">
 
