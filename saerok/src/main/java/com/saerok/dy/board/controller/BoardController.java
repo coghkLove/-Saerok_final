@@ -37,13 +37,13 @@ public class BoardController {
 	@GetMapping("/boardview")
 	public String selectBoardByNo(@RequestParam int boardNo, Model model) {
 		
-		// 게시글 상세보기 로직
+		// 게시글 상세보기 로직 구현
 		Board board = boardService.selectBoardByNo(boardNo);
 		model.addAttribute("b", board);
 		return "board/boardView";
 	}
 
-	// 공지사항 작성 페이지로 이동
+	// 공지사항 작성 페이지로 이동하는 로직
 	@GetMapping("/boardwrite")
 	public String boardWrite() {
 		return "board/boardWrite";
