@@ -37,6 +37,7 @@ public class NoteServiceImpl implements NoteService {
 		return dao.selectEmpByName(session);
 	}
 
+	// 쪽지 보내기
 	@Override
 	@Transactional
 	public boolean sendNote(Note note) {
