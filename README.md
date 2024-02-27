@@ -4,7 +4,7 @@
 
 ##  프로젝트 개요 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Laptop.png" alt="Laptop" width="30" height="30" />
 
-화장품 회사의 업무 프로세스를 관리하고 지점과의 협업을 위한 그룹웨어
+화장품 회사의 업무 프로세스를 관리하고 지점과 협업을 위한 그룹웨어
 
 
   
