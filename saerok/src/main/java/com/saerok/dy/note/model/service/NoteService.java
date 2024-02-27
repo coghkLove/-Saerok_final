@@ -20,6 +20,7 @@ public interface NoteService {
     // 쪽지 전송
 	boolean sendNote(Note note);
 
+	// 번호로 쪽지 가져오기
 	Note getNoteByNoteNo(int noteNo);
 
 	// 쪽지 삭제
