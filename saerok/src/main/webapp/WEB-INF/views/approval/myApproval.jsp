@@ -24,7 +24,7 @@
 </jsp:include>
 
 
-<!-- 전체 리스트 -->
+
 <div clas="container-fluid">
 
 	<div class="card shadow mb-4">
