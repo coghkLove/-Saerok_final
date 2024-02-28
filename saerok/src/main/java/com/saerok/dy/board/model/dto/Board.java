@@ -6,7 +6,6 @@ import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
 
- // 파일 업로드까지 구현해보기
 @Getter
 @Setter
 public class Board {
