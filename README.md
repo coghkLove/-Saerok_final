@@ -20,7 +20,7 @@
 
 * 2023/11/24 ~ 2024/01/25
 
-<img src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/05ce5131-5fc6-4100-97c7-7b11269a5d8a">
+<img src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/88b7d1c7-9f07-4986-a3bb-7d6f5f19cbb2">
 
 ##  기술 스택 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Rocket" width="30" height="30" />
 
