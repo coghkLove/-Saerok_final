@@ -7,7 +7,7 @@ import com.saerok.dy.board.model.dto.Board;
 public interface BoardService {
     List<Board> boardList();
   
-    //공지사항 상세보기
+    // 공지사항 상세보기
     Board selectBoardByNo(int boardNo);
     
     // 부서별 게시판 구현
