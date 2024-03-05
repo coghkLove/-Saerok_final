@@ -287,7 +287,7 @@
                                     </div>
                                     <div>
                                         <div class="small text-gray-500">2024/02/06</div>
-                                        <span class="font-weight-bold">알림 구현중. .</span>
+                                        <span class="font-weight-bold">오늘 24일인데 아직도?</span>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -404,23 +404,7 @@
                                     </div>
                                 </a>
                                 
-						<!-- <a class="dropdown-item d-flex align-items-center" href="#"> -->
-						<%-- <div class="dropdown-list-image mr-3" name="oriFileName">
-							<a href="${path }/mypage"> <img
-								src="${path}/resources/upload/profile/${loginEmployee.destFileName}"
-								alt="ato-profile-img">
-							</a>
-							<div class="status-indicator bg-success"></div>
-						</div> --%>
-
-						<!-- <div>
-                                        <div class="text-truncate">쪽지내용.</div>
-                                        <div class="small text-gray-500">보낸사람 · 2w</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">쪽지 더보기</a>
-                            </div>
-                        </li> -->
+					
 
 						<div class="topbar-divider d-none d-sm-block"></div>
 

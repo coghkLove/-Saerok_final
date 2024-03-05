@@ -10,13 +10,12 @@
 	value="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal }" />
 
 <jsp:include page="/WEB-INF/views/common/header.jsp">
-	<jsp:param value="품의서" name="title" />
+	<jsp:param value="일반품의서" name="title" />
 </jsp:include>
-
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 
-<!-- Modal-->
+<!--Model  -->
 <div class="modal fade" id="testModal" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">

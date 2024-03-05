@@ -40,7 +40,6 @@
 		</div>
 		<div class="card-body">
 			<div class="table-responsive">
-
 				<!-- 쪽지 쓰기 버튼 -->
 				<button type="button" class="btn btn-primary" id="sendMsgModal"
 					data-toggle="modal" data-target="#msgModal">쪽지 쓰기</button>
@@ -49,6 +48,7 @@
 					cellspacing="0">
 					<thead>
 						<tr>
+							<th><input type="checkbox" id="selectAll" /></th>
 							<th>번호</th>
 							<th>받는사람</th>
 							<th>날짜</th>
@@ -60,6 +60,8 @@
 						<c:if test="${not empty sentNotes}">
 							<c:forEach var="note" items="${sentNotes}">
 								<tr>
+									<td><input type="checkbox" class="noteCheckBox"
+										value="${note.noteNo}" /></td>
 									<td><c:out value="${note.noteNo}" /></td>
 									<td><a href="javascript:void(0);"
 										onclick="showNoteContent(${note.noteNo})"> <c:out
@@ -124,98 +126,113 @@
 				<button type="button"
 					class="btn btn-primary material-symbols-outlined" id="send-btn">보내기</button>
 			</div>
-
 		</div>
 	</div>
 </div>
 
 <script>
     $(document).ready(function () {
-        // DataTable 초기화
-        $('#dataTable').DataTable({
-            info: false,
-            ordering: true,
-            paging: true
+        // 모든 체크박스를 선택하거나 해제하는 기능
+        $("#selectAll").click(function () {
+            $('.noteCheckBox').prop('checked', $(this).prop('checked'));
         });
 
+        // 개별 체크박스를 선택할 때 전체 체크박스의 상태를 확인하여 필요한 경우 전체 체크박스를 선택하거나 해제하는 기능
+        $('.noteCheckBox').click(function () {
+            if ($(this).prop("checked") == false) {
+                $("#selectAll").prop('checked', false);
+            }
+            if ($('.noteCheckBox:checked').length == $('.noteCheckBox').length) {
+                $("#selectAll").prop('checked', true);
+            }
+        });
+        
+        $(document).ready(function () {
+            // DataTable 초기화
+            $('#dataTable').DataTable({
+                info: false,
+                ordering: true,
+                paging: true
+            });
 
+            // send 버튼 기능 구현
+            $('#send-btn').click(function () {
+                var recipientName = $('#recipient-name').val();
+                var messageText = $('#message-text').val();
 
-        $('#send-btn').click(function () {
-            var recipientName = $('#recipient-name').val();
-            var messageText = $('#message-text').val();
+                // AJAX로 데이터 전송
+                $.ajax({
+                    type: 'POST',
+                    url: '${path}/note/send',
+                    data: {
+                        recipientName: recipientName,
+                        messageText: messageText
+                    },
+                    success: function (response) {
+                        alert(response);
+                        $("#Modal").modal("hide");
+                        location.replace("${path}/note/send");
+                    },
+                    error: function (error) {
+                        console.log("에러", error);
+                        alert("쪽지");
+                    }
+                });
+            });
+        });
 
-            // AJAX로 데이터 전송
+        function confirmDelete(noteNo) {
+            // 삭제 여부를 확인하는 confirm 창 띄우기
+            var isDelete = confirm("해당 쪽지를 삭제하시겠습니까?");
+
+            if (isDelete) {
+                // 확인을 눌렀을 때 휴지통으로 이동
+                deleteNote(noteNo);
+            }
+        }
+
+        function deleteNote(noteNo) {
+            // AJAX를 사용하여 서버에 삭제 요청
             $.ajax({
                 type: 'POST',
-                url: '${path}/note/send',
+                url: '${path}/note/basket',
                 data: {
-                    recipientName: recipientName,
-                    messageText: messageText
+                    noteNo: noteNo
                 },
                 success: function (response) {
                     alert(response);
-                    $("#Modal").modal("hide");
-                    location.replace("${path}/note/send");
+                    // 휴지통으로 이동하는 동작 수행
+                    location.replace("${path}/note/basket");
                 },
                 error: function (error) {
-                    console.log("에러에러", error);
-                    alert("쪽지쪽지");
+                    console.error("에러:", error);
+                    alert("쪽지 삭제에 실패하였습니다.");
                 }
             });
-        });
-    });
-
-    function confirmDelete(noteNo) {
-        // 삭제 여부를 확인하는 confirm 창 띄우기
-        var isDelete = confirm("쪽지를 삭제하시겠습니까?");
-
-        if (isDelete) {
-            // 확인을 눌렀을 때 휴지통으로 이동
-            deleteNote(noteNo);
         }
-    }
-
-    function deleteNote(noteNo) {
-        // AJAX를 사용하여 서버에 삭제 요청
-        $.ajax({
-            type: 'POST',
-            url: '${path}/note/basket',
-            data: {
-                noteNo: noteNo
-            },
-            success: function (response) {
-                alert(response);
-                // 휴지통으로 이동하는 동작 수행
-                location.replace("${path}/note/basket");
-            },
-            error: function (error) {
-                console.error("에러 발생:", error);
-                alert("쪽지 삭제에 실패하였습니다.");
-            }
-        });
-    }
-    function showNoteContent(noteNo) {
-        // AJAX로 쪽지 내용을 서버에서 가져옴
-        $.ajax({
-            type: 'GET',
-            url: '${path}/note/getNoteByNoteNo',
-            data: {
-                noteNo: noteNo
-            },
-            success: function (note) {
-                // 모달 창에 쪽지 내용을 표시
-                $('#noteContentModalBody').html('<pre>' + note.noteContent + '</pre>');
-                $('#noteContentModal').modal('show');
-            },
-            error: function (error) {
-                console.error("에러 발생:", error);
-                alert("쪽지 내용을 불러오는 데 실패했습니다.");
-            }
-        });
-    }
-    function sendMessage(empNo) {
-        alert(empNo);
-    }
+        function showNoteContent(noteNo) {
+            // AJAX로 쪽지 내용을 서버에서 가져옴
+            $.ajax({
+                type: 'GET',
+                url: '${path}/note/getNoteByNoteNo',
+                data: {
+                    noteNo: noteNo
+                },
+                success: function (note) {
+                    // 모달 창에 쪽지 내용을 표시
+                    $('#noteContentModalBody').html('<pre>' + note.noteContent + '</pre>');
+                    $('#noteContentModal').modal('show');
+                },
+                error: function (error) {
+                    console.error("에러:", error);
+                    alert("쪽지 내용을 불러오는 데 실패했습니다.");
+                }
+            });
+        }
+        function sendMessage(empNo) {
+            alert(empNo);
+        }
+    });
 </script>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />

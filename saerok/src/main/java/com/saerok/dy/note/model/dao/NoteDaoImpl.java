@@ -22,8 +22,7 @@ public class NoteDaoImpl implements NoteDao {
 	// 보낸 쪽지 조회
 	@Override
 	public List<Note> getSentNotes(String empNo, SqlSession session) {
-		
-		// 매개변수를 Map에 담아 전달
+
 		Map<String, Object> params = new HashMap<>();
 		params.put("empNo", empNo);
 		return session.selectList("note.getSentNotes", params);
@@ -46,15 +45,15 @@ public class NoteDaoImpl implements NoteDao {
 		return 0;
 	}
 
-	// 쪽지 번호로 가져오기 
+	// 쪽지 번호로 가져오기
 	@Override
 	public Note getNoteByNoteNo(int noteNo, SqlSession session) {
 		return session.selectOne("note.getNoteByNoteNo", noteNo);
 	}
-	
+
 	// 쪽지 삭제
 	@Override
 	public int deleteNote(SqlSession session, Note noteNo) {
-		return session.delete("note.deleteNote",noteNo);
+		return session.delete("note.deleteNote", noteNo);
 	}
 }

@@ -30,7 +30,7 @@ public class NoteController {
 
 	@Autowired
 	private final NoteService noteService;
-	
+
 	// 받은 쪽지함 페이지로 이동
 	@GetMapping("/get")
 	public String readNotePage(Model model, Principal loginMember) {
@@ -39,7 +39,7 @@ public class NoteController {
 		model.addAttribute("receivedNotes", receivedNotes);
 		return "note/noteGet";
 	}
-	
+
 	// 보낸 쪽지함 페이지로 이동
 	@GetMapping("/send")
 	public String sendNotePage(Principal loginSession, Model model) {
@@ -50,12 +50,12 @@ public class NoteController {
 		model.addAttribute("sentNotes", sentNotes);
 		return "note/noteSend";
 	}
-	
+
 	@PostMapping("/basket")
 	@ResponseBody
 	public String deleteNote(@RequestBody Note note, Model model) {
-	    int result = noteService.deleteNote(note);
-	    return result > 0 ? "성공" : "실패";
+		int result = noteService.deleteNote(note);
+		return result > 0 ? "성공" : "실패";
 	}
 
 	// 이름으로 사원 조회
@@ -82,12 +82,12 @@ public class NoteController {
 		note.setRevEmpNo(recipientName.split(" ")[0]);
 		note.setNoteContent(messageText);
 		note.setSndEmpNo(empNo);
-		//note.setModId(empNo);
+		// note.setModId(empNo);
 
 		boolean isSentSuccessfully = noteService.sendNote(note);
 
 		if (isSentSuccessfully) {
-			return "쪽지가 전송되었습니다.";
+			return "쪽지를 전송하였습니다.";
 		} else {
 			return "쪽지 전송에 실패하였습니다.";
 		}

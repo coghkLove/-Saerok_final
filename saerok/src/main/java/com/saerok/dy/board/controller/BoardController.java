@@ -37,13 +37,13 @@ public class BoardController {
 	@GetMapping("/boardview")
 	public String selectBoardByNo(@RequestParam int boardNo, Model model) {
 		
-		// 게시글 상세보기 로직
+		// 게시글 상세보기 로직 구현
 		Board board = boardService.selectBoardByNo(boardNo);
 		model.addAttribute("b", board);
 		return "board/boardView";
 	}
 
-	// 공지사항 작성 페이지로 이동
+	// 공지사항 작성 페이지로 이동하는 로직
 	@GetMapping("/boardwrite")
 	public String boardWrite() {
 		return "board/boardWrite";
@@ -60,10 +60,11 @@ public class BoardController {
 		// 게시글 저장 로직 수행
 		try {
 			boardService.save(board);
-			// 게시글 저장 후 다시 목록 불러옴
+			
+			// 게시글 저장 후 목록 불러오기
 			List<Board> boardList = boardService.boardList();
 			model.addAttribute("boardList", boardList);
-			model.addAttribute("msg", "게시글을 등록하였습니다.");
+			model.addAttribute("msg", "new ! 게시글을 등록하였습니다.");
 			model.addAttribute("loc", "board/boardlist");
 		} catch (Exception e) {
 			model.addAttribute("msg", "게시글을 다시 작성해주세요.");

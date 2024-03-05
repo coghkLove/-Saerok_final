@@ -21,6 +21,7 @@ public interface BoardDao {
 	//공지사항 상세보기
 	Board selectBoardByNo(SqlSession session, int boardNo);
 
+	// 쪽지 저장
 	void save(Board board);
 
 }

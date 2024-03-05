@@ -23,9 +23,8 @@
 	<jsp:param name="" value="전자결재리스트" />
 </jsp:include>
 
+<!--모달창-->
 
-<!-- 전체 리스트 -->
-<!--수정중  -->
 <div clas="container-fluid">
 
 	<div class="card shadow mb-4">
