@@ -14,7 +14,6 @@ public class Board {
 	private String boardTitle;
 	private String boardContent;
 	private String boardWriter;
-	//private String oriFileName;
 	private String destFileName;
 	private String regId;
 	private Date regDtime;
