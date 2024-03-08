@@ -99,5 +99,4 @@ public class NoteController {
 	public Note getNoteByNoteNo(int noteNo) {
 		return noteService.getNoteByNoteNo(noteNo);
 	}
-
 }
