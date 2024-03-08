@@ -24,7 +24,6 @@
 </jsp:include>
 
 <!--모달창-->
-
 <div clas="container-fluid">
 
 	<div class="card shadow mb-4">
