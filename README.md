@@ -62,7 +62,9 @@
 
 ##  ERD <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Crayon.png" alt="Crayon" width="30" height="30" />
 
+<picture>
 <img src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/d796eb63-eac7-4761-abec-1c466401243a"/> 
+</picture>
 
 ##  프로젝트 구성 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bookmark%20Tabs.png" alt="Bookmark Tabs" width="30" height="30" />
 
