@@ -144,5 +144,7 @@
 </script>
 
 
-<script
-	src="${path }/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<%-- <script
+	src="${path }/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> --%>
+
+	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
