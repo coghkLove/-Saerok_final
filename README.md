@@ -20,7 +20,9 @@
 
 * 2023/11/24 ~ 2024/01/25
 
-<img src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/88b7d1c7-9f07-4986-a3bb-7d6f5f19cbb2">
+<picture>
+<img width="1300" alt=" 프로젝트일정" src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/2abe83ec-b3d6-46df-a11e-ebf185691668">
+</picture>
 
 ##  기술 스택 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Rocket" width="30" height="30" />
 
@@ -62,12 +64,18 @@
 
 ##  ERD <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Crayon.png" alt="Crayon" width="30" height="30" />
 
+<picture>
 <img src="https://github.com/jjiyeong/-Saerok_final/assets/148295633/d796eb63-eac7-4761-abec-1c466401243a"/> 
+</picture>
 
 ##  프로젝트 구성 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bookmark%20Tabs.png" alt="Bookmark Tabs" width="30" height="30" />
 
 <details>
 <summary>로그인 </summary>
+
+* ##### ID/PW기반 spring-security를 이용한 인증, 권한 설정
+* ##### security remember-me를 사용하여 로그인 상태 유지 가능
+
 </details>
 
 <details>
@@ -79,6 +87,10 @@
 
 <details>
 <summary>마이페이지</summary>
+
+* ##### ajax 통신을 이용한 데이터 변경처리
+* ##### 주소 API 사용하여 주소 출력
+
 </details>
 
 <details>
@@ -101,6 +113,24 @@
 
 <details>
 <summary>사원관리</summary>
+
+* ##### 사원 등록
+  * ###### 프로필 사진 업로드
+  * ###### 사원 정보 입력 후 사원 등록 가능
+* ##### 사원 조회
+  * ###### 전체사원 정보 List로 출력
+  * ###### 사원 정보 수정 화면 모달창으로 출력
+* ##### 사원 수정
+  * ###### 분기처리하여 script로 권한을 나누어 인사팀 부장에게만 수정 및 삭제버튼 출력
+  * ###### ajax 사용하여 사원 정보 수정 및 삭제 구현
+  
+</details>
+
+<details>
+<summary>조직도</summary>
+
+* ##### DB에 저장된 팀별 List 출력
+  
 </details>
 
 <details>
