@@ -25,7 +25,7 @@
     </select>
     
     <!-- 공지사항 상세보기 -->
-    <select id="selectNoticeByNo" parameterType="int" resultMap="boardMap">
+    <select id="selectBoardByNo" parameterType="int" resultMap="boardMap">
         SELECT *
         FROM BOARD
         WHERE BOARD_NO = #{boardNo}

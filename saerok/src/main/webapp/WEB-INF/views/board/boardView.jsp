@@ -99,9 +99,9 @@
 
 
 <script>
-	//목록버튼 눌렀을 때 noticelist로 페이지이동 
+	//목록버튼 눌렀을 때 boardlist로 페이지이동 
 	const listBtn = ()=> {
-		location.replace("${path}/board/noticelist");
+		location.replace("${path}/board/boardlist");
 	}
 	
 	

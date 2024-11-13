@@ -10,13 +10,12 @@
 	value="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal }" />
 
 <jsp:include page="/WEB-INF/views/common/header.jsp">
-	<jsp:param value="일반" name="title" />
+	<jsp:param value="일반품의서" name="title" />
 </jsp:include>
-
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 
-<!-- Modal-->
+<!--Model  -->
 <div class="modal fade" id="testModal" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
@@ -29,7 +28,7 @@
 			</div>
 			<div class="modal-body">
 				<div style="display: flex;">
-					<div style=" box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); width: 300px;">
+					<div style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); width: 300px;">
 						<ul id="mixed" class="loadDeptButton">
 							<li><span class="deptName" role="button"
 								style="color: black;"> <i class="fas fa-search fa-fw"></i>
@@ -54,8 +53,8 @@
 						</ul>
 					</div>
 					<div>
-						<input type="button" id="addButton" value="결재자추가" 
-							style="width: 100px; height: 50px; "> <input type="button"
+						<input type="button" id="addButton" value="결재자추가"
+							style="width: 100px; height: 50px;"> <input type="button"
 							id="resetButton" value="취소" style="width: 50px; height: 50px;"><br>
 						<!-- <input type="button" id="addReferButton" value="참조자추가"
 							style="width: 100px; height: 50px; margin-top: 300px"> <input
@@ -64,10 +63,10 @@
 					</div>
 					<div style="display: flex; flex-direction: column;">
 						<div
-							style=" margin-left: 100px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); padding: 10px;">
+							style="margin-left: 100px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); padding: 10px;">
 							결재자 선택</div>
 						<div id="approverElement"
-							style=" margin-left: 100px; width: 300px; height: 300px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+							style="margin-left: 100px; width: 300px; height: 300px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
 							<!-- Your content here -->
 						</div>
 						<!-- <div
@@ -332,7 +331,7 @@ $(document).ready(function() {
 					<td colspan="8" style="text-align: center; height: 100px;">
 						2024년 &nbsp; 1 월 &nbsp; 31일 &nbsp;</td>
 				</tr>
-				
+
 				<tr>
 					<td colspan="8"
 						style="color: black; text-align: right; height: 100px; padding-right: 50px;">

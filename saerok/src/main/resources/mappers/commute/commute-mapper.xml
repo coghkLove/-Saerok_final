@@ -16,32 +16,6 @@
 
    </resultMap>
 
-
-<!--    <resultMap type="emp" id="empMap">
-      <id column="EMP_NO" property="empNo" />
-      <result column="EMP_PW" property="empPw" />
-      <result column="EMP_NAME" property="empName" />
-      <result column="EMP_PHONE" property="empPhone" />
-      <result column="EMP_EMAIL" property="empEmail" />
-      <result column="EMP_ADDR" property="empAddr" />
-      <result column="EMP_DETAIL_ADDR" property="empDetailAddr" />
-      <result column="EMP_DATE" property="empDate" />
-      <result column="WORK_YN" property="workYn" />
-      <result column="ORI_FILENAME" property="oriFileName" />
-      <result column="DEST_FILENAME" property="destFileName" />
-      <result column="ISSUE_ANNU" property="issueAnnu" />
-      <result column="USE_ANNU" property="useAnnu" />
-      <result column="DEPT_CODE" property="deptCode" />
-      <result column="DEPT_NAME" property="deptName" />
-      <result column="JOB_CODE" property="jobCode" />
-      <result column="JOB_NAME" property="jobName" />
-   </resultMap> -->
-   
-<!--    <select id="selectCommuteList" parameterType="map"
-      resultMap="commuteMap">
-      SELECT * FROM COMMUTE WHERE EMP_NO=#{empNo}AND
-      TRUNC(WORKINGDAY)=TO_DATE(#{time},'yy-')
-   </select> -->  
  <select id="selectCommuteList" parameterType="map" resultMap="commuteMap">
     SELECT *
     FROM COMMUTE
@@ -65,41 +39,6 @@
       AND IN_DTIME IS NOT NULL
    </select>
 
-<!--    <select id="selectCommute" parameterType="String"
-      resultMap="commuteMap">
-      SELECT
-      COMMUTE_NO,
-      EMP_NO,
-      WORKINGDAY,
-      SUBSTR(IN_DTIME, 11,
-      LENGTH(IN_DTIME)) IN_TIME,
-      SUBSTR(OUT_DTIME, 11, LENGTH(OUT_DTIME))
-      OUT_TIME
-      FROM
-      COMMUTE
-      WHERE EMP_NO = #{empNo} AND TO_CHAR(WORKINGDAY,
-      'RR/MM/DD') = TO_CHAR(CURRENT_DATE, 'RR/MM/DD')
-   </select>
-
-   <insert id="insertCommute" parameterType="String">
-      INSERT INTO COMMUTE
-      (COMMUTE_NO, EMP_NO, WORKINGDAY, IN_DTIME)
-      VALUES
-      ('C'||#{empNo}||'-'||TO_CHAR(CURRENT_DATE, 'yyyyMMdd'), #{empNo},
-      SYSDATE, TO_CHAR(CURRENT_TIMESTAMP, 'yyyy-MM-dd HH24:MI:SS'))
-   </insert> -->
-
-   <!-- <insert id="insertCommuteStatus" parameterType="map"> INSERT INTO COMMUTE 
-      (commute_no, IN_DTIME,STATUS, EMP_NO,WORKINGDAY) VALUES (commute_SEQ.NEXTVAL, 
-      TO_CHAR(CURRENT_TIMESTAMP, 'yyyy-MM-dd HH24:MI:SS'),#{status},#{empNo} ,TO_CHAR(SYSDATE,'YYYY-MM-DD')) 
-      <selectKey keyProperty="indtime" resultType="date"> SELECT IN_DTIME FROM 
-      COMMUTE WHERE EMP_NO = #{empNo} AND TO_CHAR(SYSDATE,'YYYY-MM-DD') =TO_CHAR(WORKINGDAY,'YYYY-MM-DD') 
-      </selectKey> </insert> -->
-   <!-- <insert id="insertCommuteStatus" parameterType="map"> INSERT INTO COMMUTE 
-      (commute_no, IN_DTIME, STATUS, EMP_NO, WORKINGDAY) VALUES (commute_SEQ.NEXTVAL, 
-      CURRENT_TIMESTAMP, #{status}, #{empNo}, SYSDATE) <selectKey keyProperty="indtime" 
-      resultType="date"> SELECT IN_DTIME FROM COMMUTE WHERE EMP_NO = #{empNo} AND 
-      WORKINGDAY = SYSDATE </selectKey> </insert> -->
    <insert id="insertCommuteStatus" parameterType="map">
       insert into
       commute
@@ -133,30 +72,6 @@
 			=TO_CHAR(WORKINGDAY,'YYYY-MM-DD')
 		</selectKey>
 	</update> 
-<!-- 	<update id="updateCommuteEndTime" parameterType="map">
-		UPDATE COMMUTE
-		SET
-		OUT_DTIME = TO_DATE('yyyy-MM-dd'),
-		STATUS=#{status}
-		WHERE EMP_NO = #{empNo} AND
-		TO_DATE('YYYY-MM-DD')
-		=TO_DATE(WORKINGDAY,'YYYY-MM-DD') AND
-		OUT_DTIME IS NULL
-		<selectKey keyProperty="outdtime" resultType="date">
-			SELECT
-			OUT_DTIME FROM COMMUTE
-			WHERE EMP_NO = #{empNo} AND
-			TO_DATE('YYYY-MM-DD')
-			=TO_DATE(WORKINGDAY,'YYYY-MM-DD')
-		</selectKey>
-	</update> 
- -->
-<!--  <update id="updateCommuteEndTime" parameterType="map">
-    UPDATE commute
-    SET out_Dtime = FROM_TZ(TO_TIMESTAMP(SYSTIMESTAMP, 'YYYY-MM-DD HH24:MI:SS.FF3'), 'Asia/Seoul'),
-        status = '업무종료' 
-    WHERE emp_no = #{empNo} AND TRUNC(workingDay) = TO_DATE(#{time}, 'YYYY-MM-DD')
-</update>  -->
 <update id="updateStartWork" parameterType="map">
       update
       commute
@@ -166,32 +81,6 @@
       emp_No = #{empNo}
       and TRUNC((TO_DATE(WORKINGDAY, 'YYYY-MM-DD')) = TO_DATE(#{time},'YYYY-MM-DD')
    </update>
-<!-- 
-   <update id="updateStartWork" parameterType="map">
-    UPDATE COMMUTE
-    SET IN_DTIME = NULL
-    WHERE EMP_NO = #{empNo}
-      AND TRUNC(WORKINGDAY) = TO_DATE(#{time}, 'YY-MM-DD')
-</update> -->
-
-<!-- 
-   <select id="selectCommuteStatusList" parameterType="string"
-      resultMap="commuteMap">
-      SELECT
-      A.COMMUTE_NO,
-      A.IN_DTIME,
-      A.OUT_DTIME,
-      A.LATE_YN,
-      A.STATUS,
-      A.OVERTIME,
-      A.WORKINGDAY,
-      A.EMP_NO
-      FROM
-      COMMUTE A
-      WHERE EMP_NO =
-      #{empNo}
-      ORDER BY WORKINGDAY;
-   </select> -->
 
 <update id="updateWorkTime" parameterType="map">
       UPDATE COMMUTE SET
@@ -200,13 +89,6 @@
       WHERE EMP_NO=#{empNo} AND
       TRUNC(TO_DATE(WORKINGDAY, 'YYYY-MM-DD'))=TO_DATE(#{time},'YYYY-MM-DD')
    </update> 
-<!--    <update id="updateWorkTime" parameterType="map">
-    UPDATE COMMUTE
-    SET WORKINGHOURS = #{daytime},
-        OVERTIME = #{overtime}
-    WHERE EMP_NO = #{empNo}
-      AND TRUNC(WORKINGDAY) = TO_DATE(#{time}, 'YY-MM-DD')
-</update> -->
 
    <update id="updateHalfDayOff" parameterType="map">
       update commute
@@ -242,13 +124,7 @@
       AND TO_DATE(WORKINGDAY, 'YYYY-MM-DD')  BETWEEN TO_DATE(#{start}, 'YYYY-MM-DD') AND
       TO_DATE(#{end}, 'YYYY-MM-DD')
    </select>
-   <!-- <select id="selectWeekWorkTime" parameterType="map" resultType="_int"> 
-      select nvl(sum(workingHours), 0) as 해당기간근무시간 from commute where emp_no = 
-      #{empNo} and workingDay between #{start} and #{end} + interval '1' DAY </select> -->
 
-   <!-- <select id="selectWeekOverTime" parameterType="map" resultMap="commuteMap"> 
-      SELECT NVL(SUM(OVERTIME),0) FROM COMMUTE WHERE EMP_NO =#{empNo}AND WORKINGDAY 
-      BETWEEN #{start} AND TO_DATE(#{end}) ORDER BY WORKINGDAY </select> -->
       
    <select id="selectWeekOverTime" parameterType="map"
       resultType="_int">
@@ -283,52 +159,6 @@
       WHERE TO_DATE(WORKINGDAY, 'YYYY-MM-DD') = TO_DATE(#{monthTime},'YYYY-MM-DD')
       AND EMP_NO = #{empNo}
    </select>
-
-   
-<!-- <select id="selectEmpDeptList" parameterType="map" resultType="string">
-   SELECT
-   EMP_NO, EMP_NAME,(SELECT JOB_NAME FROM EMPLOYEE WHERE E.JOB_CODE=JOB_CODE)AS JOB_NAME,
-   (SELECT DEPT_NAME FROM EMPLOYEE WHERE E.DEPT_CODE=DEPT_CODE)AS DEPT_NAME,
-   (SELECT DEST_FILENAME FROM EMPLOYEE WHERE PK_NO = E.EMP_NO) AS DESTFILENAME 
-   FROM EMP E WHERE(E.WORK_YN='N' OR EMP_DATE>=(TO_DATE(TO_CHAR(SYSDATE,'YYYY-MM-DD HH:24:MI:SS'),
-   'YYYY-MM-DD HH24:MI:SS'))
-   )AND E.DEPT_CODE=#{deptCode}
-   ORDER BY E.JOB_CODE
-</select>
-  
-    
-    <select id="empFinderDeptList" resultMap="empMap">
-    SELECT 
-        e.*,
-        j.job_name,
-        d.dept_name,
-        (SELECT dest_filename FROM employee WHERE pk_no = e.emp_no) destFilename
-    FROM 
-        emp e 
-        JOIN dept d ON e.dept_code = d.dept_code
-        JOIN job j ON e.job_code = j.job_code
-    WHERE
-        (
-            work_yn = 'N'
-            OR
-            emp_date >= (TO_DATE_TZ(TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS'), 'YYYY-MM-DD HH24:MI:SS') AT TIME ZONE 'Asia/Seoul')
-        )
-        <if test="searchType == 'dept_name'">
-            AND d.dept_name LIKE '%' || #{searchKeyword} || '%'
-        </if>
-        <if test="searchType == 'job_name'">
-            AND j.job_name LIKE '%' || #{searchKeyword} || '%'
-        </if>
-        <if test="searchType == 'emp_name'">
-            AND e.emp_name LIKE '%' || #{searchKeyword} || '%'
-        </if>
-        <if test="deptCode != null">
-            AND e.dept_code = #{deptCode}
-        </if>
-    ORDER BY
-        e.dept_code, e.job_code
-</select>
-     -->
 
 </mapper>
 

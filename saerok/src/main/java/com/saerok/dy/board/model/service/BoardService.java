@@ -5,12 +5,12 @@ import java.util.List;
 import com.saerok.dy.board.model.dto.Board;
 
 public interface BoardService {
-    List<Board> noticeList();
+    List<Board> boardList();
   
-    //공지사항 상세보기
-    Board selectNoticeByNo(int boardNo);
+    // 공지사항 상세보기
+    Board selectBoardByNo(int boardNo);
     
-    
+    // 부서별 게시판 구현
     List<Board> boardPart();
     
     // 게시글 저장

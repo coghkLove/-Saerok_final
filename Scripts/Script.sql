@@ -225,4 +225,4 @@ SELECT * FROM commute;
 
 SELECT * FROM SCHEDULE s ;
 DELETE FROM SCHEDULE s  WHERE schedule_no=40;
-
+DELETE FROM commute  WHERE commute_no=1183;

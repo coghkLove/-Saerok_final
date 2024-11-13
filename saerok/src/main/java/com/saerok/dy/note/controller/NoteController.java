@@ -40,7 +40,7 @@ public class NoteController {
 	// 받은 쪽지함 페이지로 이동
 	@GetMapping("/get")
 	public String readNotePage(Model model, Principal loginMember) {
-		
+
 		List<Note> receivedNotes = noteService.getReceivedNotes(loginMember.getName());
 		model.addAttribute("receivedNotes", receivedNotes);
 		return "note/noteGet";
@@ -72,21 +72,21 @@ public class NoteController {
 
 	@PostMapping("/basket")
 	@ResponseBody
-	public String deleteNote(Principal loginSession, @RequestParam int noteNo,Model model) {
+	public String deleteNote(Principal loginSession, @RequestParam int noteNo, Model model) {
 		// 현재 로그인 중인 사원의 사원번호
 		String empNo = loginSession.getName();
-		
+
 		// NoteService를 통해 쪽지 삭제 후 휴지통으로 이동
-		boolean isDeleted = noteService.deleteToTrash(empNo,noteNo);
-		
-		if(isDeleted) {
+		boolean isDeleted = noteService.deleteToTrash(empNo, noteNo);
+
+		if (isDeleted) {
 			// 삭제된 쪽지 가져와 휴지통 모델에 추가
-			Note deletedeNote=noteService.getNoteByNoteNo(noteNo);
-			model.addAttribute("deletedNote",deletedeNote);
+			Note deletedeNote = noteService.getNoteByNoteNo(noteNo);
+			model.addAttribute("deletedNote", deletedeNote);
 			return "쪽지가 삭제되었습니다.";
-		}else {
+		} else {
 			return "쪽지 삭제 실패하였습니다.";
-		
+
 		}
 
 	}
@@ -128,7 +128,7 @@ public class NoteController {
 			return "쪽지 전송에 실패하였습니다.";
 		}
 	}
-	
+
 	@GetMapping("/getNoteByNoteNo")
 	@ResponseBody
 	public Note getNoteByNoteNo(int noteNo) {

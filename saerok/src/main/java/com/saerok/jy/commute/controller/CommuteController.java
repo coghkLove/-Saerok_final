@@ -38,6 +38,7 @@ import com.saerok.jy.commute.service.CommuteService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
+
 @Controller
 @RequestMapping("/commute")
 public class CommuteController {
@@ -325,6 +326,7 @@ public class CommuteController {
 		    
 		    List<Employee> empList = employeeService.selectEmpDeptList(deptCode);
 
+
 		    List<Map<String, Object>> workList = new ArrayList<>();
 
 		    for(Employee emp : empList) {
@@ -391,7 +393,7 @@ public class CommuteController {
 		@ResponseBody
 		@GetMapping("/searchEmpDept.do")
 		public ResponseEntity<?> searchEmpDept( String dateText, String deptCode, String searchType, String searchKeyword) {
-			
+
 			String[] arr = dateText.split("\\.");
 			    String date = arr[0].substring(2) + "/" + arr[1];
 
@@ -412,7 +414,7 @@ public class CommuteController {
 			    for(Employee emp : empList) {
 			        Map<String, Object> work = new HashMap<>();
 			        List<Map<String, Object>> weekDatesList = new ArrayList<>();
-			        work.put("name", emp.getEmpName()); // 회원 이름
+			        work.put("empName", emp.getEmpName()); // 회원 이름
 			        work.put("jobName", emp.getJobName()); // 회원 직급
 			        work.put("DeptName", emp.getDeptName()); // 회원 부서
 			        

@@ -122,7 +122,6 @@
 	<input type="hidden" name=""/>
 </form>
 <script>
-
 var yearNow = document.getElementById("yearAnnual");
         function clock() {
             var time = new Date();
@@ -135,10 +134,6 @@ var yearNow = document.getElementById("yearAnnual");
                 
         }
  clock();
- 
-
-
-
 </script>
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 	<script src="${path}/resources/js/emp.js"></script>			

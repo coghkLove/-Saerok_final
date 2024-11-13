@@ -28,13 +28,13 @@
 <section id="ato-success">
 	<div class="container-fluid">
 		<form class="noticeList" id="updateBoardForm"
-			action="${path}/board/noticelist" method="post">
+			action="${path}/board/boardlist" method="post">
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
 					<h6 class="m-0 font-weight-bold text-primary">공지사항</h6>
 					<div class="d-flex justify-content-end">
 						<button type="button" class="btn btn-facebook btn-block col-1"
-							onclick="window.location.href='${path}/board/noticewrite';">작성하기</button>
+							onclick="window.location.href='${path}/board/boardwrite';">작성하기</button>
 					</div>
 				</div>
 				<div class="card-body">
@@ -44,20 +44,20 @@
 							<thead>
 								<tr>
 									<th scope="col" class="text-center">번호</th>
-									<!-- <th scope="col" class="text-center">구분</th>-->
+									<th scope="col" class="text-center">구분</th>
 									<th scope="col" class="text-center">제목</th>
 									<th scope="col" class="text-center">작성자</th>
 									<th scope="col" class="text-center">작성일</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:if test="${not empty noticeList}">
-									<c:forEach var="b" items="${noticeList}">
+								<c:if test="${not empty boardList}">
+									<c:forEach var="b" items="${boardList}">
 										<tr>
 											<td><c:out value="${b.boardNo}" /></td>
-											<!-- <td><c:out value="${b.boardCategory}" /></td>-->
+											<td><c:out value="${b.boardCategory}" /></td>
 											<td><a
-												href="${path }/board/noticeview?boardNo=${b.boardNo}"> <c:out
+												href="${path }/board/boardview?boardNo=${b.boardNo}"> <c:out
 														value="${b.boardTitle}" escapeXml="true" />
 											</a></td>
 											<td><c:out value="${b.regId}" /></td>
@@ -81,8 +81,7 @@
 			info : false,
 			ordering : true,
 			paging : true,
-			columns : [ null, null, null, null ]
-		// 열의 수에 따라 수정
+			columns : [ null, null, null, null, null ]
 		});
 	});
 </script>

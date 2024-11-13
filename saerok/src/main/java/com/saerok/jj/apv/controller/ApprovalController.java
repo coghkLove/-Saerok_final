@@ -175,7 +175,7 @@ public class ApprovalController {
 		    if ("반려".equals(apvState)) {
 		        String returnReason = paramMap.get("returnReason");
 		        resultCode="200";
-		        approvalMessage="결재가 반려 처리되었습니다. 사유: " + (returnReason != null ? returnReason : "");
+		        approvalMessage="결재가 반려 처리되었습니다. 반려 사유: " + (returnReason != null ? returnReason : "");
 		    }
 	    }
 

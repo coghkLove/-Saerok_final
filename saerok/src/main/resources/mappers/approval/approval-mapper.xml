@@ -18,8 +18,8 @@
 
       <result column="app_emp_name" property="appEmpName" />
       <result column="empNos" property="empNos" />
-	  <result column="dept_name" property="deptName"/>
-	  <result column="job_name" property="jobName"/>
+     <result column="dept_name" property="deptName"/>
+     <result column="job_name" property="jobName"/>
       <!-- Employee 매핑 -->
      <!--  <association property="empNo" resultMap="emp.empMap" /> -->
       <!-- ApvWriter 매핑 -->
@@ -44,24 +44,24 @@
    <!--전체 결재리스트 불러오기  -->
    <select id="selectApproval" resultMap="approvalMap">
       SELECT t1.APPSEQ AS APPSEQ
-	       , t1.APPWRITEDATE
-	       , t1.APPCHECK
-	       , t1.APPKINDS
-	       , t2.LETTERSTATUS
-	       , t1.emp_no AS app_emp_no
-	       , (SELECT emp_name FROM EMPLOYEE e WHERE
-			       e.emp_no = t1.emp_no) AS
-			       app_emp_name
-	       , t3.emp_no AS apv_emp_no
-	       , (SELECT
-		       emp_name FROM EMPLOYEE e WHERE e.emp_no = t3.emp_no) AS
-		       apv_emp_name
-		   , t2.LETTERTITLE
+          , t1.APPWRITEDATE
+          , t1.APPCHECK
+          , t1.APPKINDS
+          , t2.LETTERSTATUS
+          , t1.emp_no AS app_emp_no
+          , (SELECT emp_name FROM EMPLOYEE e WHERE
+                e.emp_no = t1.emp_no) AS
+                app_emp_name
+          , t3.emp_no AS apv_emp_no
+          , (SELECT
+             emp_name FROM EMPLOYEE e WHERE e.emp_no = t3.emp_no) AS
+             apv_emp_name
+         , t2.LETTERTITLE
       FROM APPROVAL t1
-		 , APPLETTER t2
-		 , APV_WRITER t3
-	 WHERE t1.APPSEQ = t2.APPSEQ 
-	   AND t1.APPSEQ = t3.APPSEQ 
+       , APPLETTER t2
+       , APV_WRITER t3
+    WHERE t1.APPSEQ = t2.APPSEQ 
+      AND t1.APPSEQ = t3.APPSEQ 
    </select>
 
    <!--결재자들 선택 추가 -->
@@ -78,11 +78,11 @@
 
 
 
-	<!-- INSERT INTO APPLETTER ar(LETTERSEQ, APPSEQ, LETTERTITLE,
+   <!-- INSERT INTO APPLETTER ar(LETTERSEQ, APPSEQ, LETTERTITLE,
       LETTERDETAIL,LETTERSTATUS,ORIFILENAME,REFILENAME)
-		SELECT APPROVAL.APPWRITEDATE
-		FROM APPROVAL al
-		WHERE ar.APPSEQ = al.APPSEQ -->
+      SELECT APPROVAL.APPWRITEDATE
+      FROM APPROVAL al
+      WHERE ar.APPSEQ = al.APPSEQ -->
 
 
    <insert id="insertAppLetter" parameterType="appLetter">
@@ -116,67 +116,67 @@
    <!--내문서 결재리스트 불러오기  -->
    <select id="myApproval" parameterType="String" resultMap="approvalMap">
       SELECT t1.APPSEQ AS APPSEQ
-	       , t1.APPWRITEDATE
-	       , t1.APPCHECK
-	       , t1.APPKINDS
-	       , t2.LETTERSTATUS
-	       , t1.emp_no AS app_emp_no
-	       , (SELECT emp_name FROM EMPLOYEE e WHERE
-			       e.emp_no = t1.emp_no) AS
-			       app_emp_name
-	       , t3.emp_no AS apv_emp_no
-	       , (SELECT
-		       emp_name FROM EMPLOYEE e WHERE e.emp_no = t3.emp_no) AS
-		       apv_emp_name
-		   , t2.LETTERTITLE
+          , t1.APPWRITEDATE
+          , t1.APPCHECK
+          , t1.APPKINDS
+          , t2.LETTERSTATUS
+          , t1.emp_no AS app_emp_no
+          , (SELECT emp_name FROM EMPLOYEE e WHERE
+                e.emp_no = t1.emp_no) AS
+                app_emp_name
+          , t3.emp_no AS apv_emp_no
+          , (SELECT
+             emp_name FROM EMPLOYEE e WHERE e.emp_no = t3.emp_no) AS
+             apv_emp_name
+         , t2.LETTERTITLE
       FROM APPROVAL t1
-		 , APPLETTER t2
-		 , APV_WRITER t3
-	 WHERE t1.APPSEQ = t2.APPSEQ 
-	   AND t1.APPSEQ = t3.APPSEQ 
-	   AND t1.EMP_NO = #{empNo}
-	   
-	  
+       , APPLETTER t2
+       , APV_WRITER t3
+    WHERE t1.APPSEQ = t2.APPSEQ 
+      AND t1.APPSEQ = t3.APPSEQ 
+      AND t1.EMP_NO = #{empNo}
+      
+     
    </select>
    <!--결재해야할 문서  -->
     <select id="myTodoApprovalList" parameterType="String" resultMap="approvalMap">
       SELECT t1.APPSEQ AS APPSEQ
-	       , t1.APPWRITEDATE
-	       , t1.APPCHECK
-	       , t1.APPKINDS
-	       , t2.LETTERSTATUS
-	       , t1.emp_no AS app_emp_no
-	       , (SELECT emp_name FROM EMPLOYEE e WHERE
-			       e.emp_no = t1.emp_no) AS
-			       app_emp_name
-	       , t3.emp_no AS APV_EMP_NO
-	       , (SELECT
-		       emp_name FROM EMPLOYEE e WHERE e.emp_no = t3.emp_no) AS
-		       apv_emp_name
-		   , t2.LETTERTITLE
+          , t1.APPWRITEDATE
+          , t1.APPCHECK
+          , t1.APPKINDS
+          , t2.LETTERSTATUS
+          , t1.emp_no AS app_emp_no
+          , (SELECT emp_name FROM EMPLOYEE e WHERE
+                e.emp_no = t1.emp_no) AS
+                app_emp_name
+          , t3.emp_no AS APV_EMP_NO
+          , (SELECT
+             emp_name FROM EMPLOYEE e WHERE e.emp_no = t3.emp_no) AS
+             apv_emp_name
+         , t2.LETTERTITLE
       FROM APPROVAL t1
-		 , APPLETTER t2
-		 , APV_WRITER t3
-	 WHERE t1.APPSEQ = t2.APPSEQ 
-	   AND t1.APPSEQ = t3.APPSEQ 
-	   AND EXISTS (
-	   		SELECT 1
-	   		  FROM APV_WRITER aw 
-	   		 WHERE aw.APPSEQ = t3.APPSEQ 
-	   		   AND aw.emp_no = #{empNo}
-	   )
-	   ORDER BY t1.APPWRITEDATE DESC
-	    <!--  SELECT appseq
-		 , (SELECT max(APPWRITEDATE) FROM APPROVAL a2 WHERE a2.appseq = t1.appseq) as APPWRITEDATE
-		 , (SELECT max(APPCHECK) FROM APPROVAL a2 WHERE a2.appseq = t1.appseq) as APPCHECK
-		 , (SELECT max(APPKINDS) FROM APPROVAL a2 WHERE a2.appseq = t1.appseq) as APPKINDS
-		 , (SELECT max(LETTERSTATUS) FROM APPLETTER a2 WHERE a2.appseq = t1.appseq) as LETTERSTATUS
-		 , (SELECT max(emp_no) FROM APPROVAL a2 WHERE a2.appseq = t1.appseq) as empNo
-		 , (SELECT max(LETTERTITLE) FROM APPLETTER a2 WHERE a2.appseq = t1.appseq) as LETTERTITLE
-	     , (LISTAGG(t1.emp_no, ',') WITHIN GROUP(ORDER BY t1.emp_no)) as empNos
-	  FROM APV_WRITER t1
-	 WHERE t1.APPSEQ IN (SELECT a.appseq FROM APPROVAL a WHERE a.emp_no = #{empNo})
-	 GROUP BY t1.appseq -->
+       , APPLETTER t2
+       , APV_WRITER t3
+    WHERE t1.APPSEQ = t2.APPSEQ 
+      AND t1.APPSEQ = t3.APPSEQ 
+      AND EXISTS (
+            SELECT 1
+              FROM APV_WRITER aw 
+             WHERE aw.APPSEQ = t3.APPSEQ 
+               AND aw.emp_no = #{empNo}
+      )
+      ORDER BY t1.APPWRITEDATE DESC
+       <!--  SELECT appseq
+       , (SELECT max(APPWRITEDATE) FROM APPROVAL a2 WHERE a2.appseq = t1.appseq) as APPWRITEDATE
+       , (SELECT max(APPCHECK) FROM APPROVAL a2 WHERE a2.appseq = t1.appseq) as APPCHECK
+       , (SELECT max(APPKINDS) FROM APPROVAL a2 WHERE a2.appseq = t1.appseq) as APPKINDS
+       , (SELECT max(LETTERSTATUS) FROM APPLETTER a2 WHERE a2.appseq = t1.appseq) as LETTERSTATUS
+       , (SELECT max(emp_no) FROM APPROVAL a2 WHERE a2.appseq = t1.appseq) as empNo
+       , (SELECT max(LETTERTITLE) FROM APPLETTER a2 WHERE a2.appseq = t1.appseq) as LETTERTITLE
+        , (LISTAGG(t1.emp_no, ',') WITHIN GROUP(ORDER BY t1.emp_no)) as empNos
+     FROM APV_WRITER t1
+    WHERE t1.APPSEQ IN (SELECT a.appseq FROM APPROVAL a WHERE a.emp_no = #{empNo})
+    GROUP BY t1.appseq -->
    </select>
    
    <!--상세페이지  -->
@@ -202,70 +202,60 @@
         APPROVAL t1
         JOIN APV_WRITER t3 ON t1.APPSEQ = t3.APPSEQ
         JOIN APPLETTER t2 ON t1.APPSEQ = t2.APPSEQ
-		JOIN EMPLOYEE E ON t1.emp_no=e.emp_no
+      JOIN EMPLOYEE E ON t1.emp_no=e.emp_no
         JOIN DEPARTMENT d ON E.DEPT_CODE =d.DEPT_CODE 
         JOIN ATO_JOB aj ON E.JOB_CODE =aj.JOB_CODE 
     WHERE
         t1.APPSEQ = #{appSeq}
-	</select>
+   </select>
    
   <!-- 승인 또는 반려 업데이트 쿼리 -->
-	<update id="updateApprovalStatus" parameterType="map">
-	    UPDATE APV_WRITER
-	    SET APV_STATE =
-	        <choose>
-	            <when test="apvState == '승인'">
-	                '300'
-	            </when>
-	            <when test="apvState == '반려'">
-	                '200'
-	            </when>
-	        </choose>,
-	    APV_EMP_TIME =
-	        <choose>
-	            <when test="apvState == '승인'">
-	                SYSDATE
-	            </when>
-	            <otherwise>
-	                null
-	            </otherwise>
-	        </choose>,
-	    RETURN_TIME =
-	        <choose>
-	            <when test="apvState == '반려'">
-	                SYSDATE
-	            </when>
-	            <otherwise>
-	                null
-	            </otherwise>
-	        </choose>,
-	    RETURN_REASON =
-	        <choose>
-	            <when test="apvState == '반려'">
-	                #{returnReason}
-	            </when>
-	            <otherwise>
-	                null
-	            </otherwise>
-	        </choose>
-	    WHERE APPSEQ = #{appSeq} AND EMP_NO = #{empNo}
-	    <selectKey keyProperty="writerList" resultType="string" order="AFTER">
-	    	SELECT WRITERLIST FROM APV_WRITER WHERE APPSEQ = #{appSeq} AND EMP_NO = #{empNo}
-	    </selectKey>
-	</update>
+   <update id="updateApprovalStatus" parameterType="map">
+       UPDATE APV_WRITER
+       SET APV_STATE =
+           <choose>
+               <when test="apvState == '승인'">
+                   '300'
+               </when>
+               <when test="apvState == '반려'">
+                   '200'
+               </when>
+           </choose>,
+       APV_EMP_TIME =
+           <choose>
+               <when test="apvState == '승인'">
+                   SYSDATE
+               </when>
+               <otherwise>
+                   null
+               </otherwise>
+           </choose>,
+       RETURN_TIME =
+           <choose>
+               <when test="apvState == '반려'">
+                   SYSDATE
+               </when>
+               <otherwise>
+                   null
+               </otherwise>
+           </choose>,
+       RETURN_REASON =
+           <choose>
+               <when test="apvState == '반려'">
+                   #{returnReason}
+               </when>
+               <otherwise>
+                   null
+               </otherwise>
+           </choose>
+       WHERE APPSEQ = #{appSeq} AND EMP_NO = #{empNo}
+       <selectKey keyProperty="writerList" resultType="string" order="AFTER">
+          SELECT WRITERLIST FROM APV_WRITER WHERE APPSEQ = #{appSeq} AND EMP_NO = #{empNo}
+       </selectKey>
+   </update>
 
-	<!--결재 최종완료 문서  -->
-	<update id="updateApproval" parameterType="map">
-		UPDATE APPROVAL SET APPCHECK='결재완료' WHERE APPSEQ = #{appSeq}
-	</update>
-
-   
-   
-   
-   
-   
-   
-   
-   
-
+   <!--결재 최종완료 문서  -->
+   <update id="updateApproval" parameterType="map">
+      UPDATE APPROVAL SET APPCHECK='결재완료' WHERE APPSEQ = #{appSeq}
+   </update>
 </mapper>

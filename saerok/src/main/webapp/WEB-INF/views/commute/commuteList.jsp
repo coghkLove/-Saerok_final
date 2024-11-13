@@ -16,8 +16,8 @@
 	</jsp:include>
 	<link rel="stylesheet" href="${path}/resources/css/empDept.css">
 <style>
-div#search-employeeJob {display: <%= "job_Name".equals(searchType) ? "inline-block" : "none" %>;}
-div#search-employeeName {display: <%= searchType == null ||  "emp_Name".equals(searchType) ? "inline-block" : "none" %>;}
+div#search-employeeJob {display: <%= "jobName".equals(searchType) ? "inline-block" : "none" %>;}
+div#search-employeeName {display: <%= searchType == null ||  "empName".equals(searchType) ? "inline-block" : "none" %>;}
 </style>
 <script>
 window.addEventListener('load', () => {
@@ -40,8 +40,8 @@ window.addEventListener('load', () => {
 
                          <div id="search-container">
 						    <select id="searchType">
-						        <option value="empName" <%= "emp_Name".equals(searchType) ? "selected" : "" %>>이름</option>
-						        <option value="jobName" <%= "job_Name".equals(searchType) ? "selected" : "" %>>직급</option>				
+						        <option value="emp_Name" <%= "empName".equals(searchType) ? "selected" : "" %>>이름</option>
+						        <option value="job_Name" <%= "jobName".equals(searchType) ? "selected" : "" %>>직급</option>				
 						    </select>
 						    <div id="search-employeeJob" class="search-type">
 							            <input type="hidden" name="searchType" value="job_Name" id="searchType"/>
@@ -53,7 +53,6 @@ window.addEventListener('load', () => {
 							            <input type="text" name="searchKeyword" id="searchKeyword" placeholder="검색할 이름을 입력하세요." />
 							            <button type="button">검색</button>			
 						    </div>
-						  
 					    </div> <!-- search-container end -->
 
                         <div>
@@ -265,7 +264,6 @@ function deptSendData(){
 //검색 기능
 document.querySelectorAll(".search-type").forEach((div) => {
 	div.querySelector("button").addEventListener('click', (e) => {
-	/* console.log(e.target.previousElementSibling.value); */
 	const searchType = document.querySelector('#searchType').value;
 	const searchKeyword = e.target.previousElementSibling.value;
 	const dateText = document.getElementById("date-text").textContent;

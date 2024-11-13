@@ -106,12 +106,7 @@
 </select>
   
 <select id="empFinderDeptList" parameterType="map">
-    SELECT 
-        EMPLOYEE *,
-        JOB_NAME,
-        DEPT_NAME,
-        (SELECT dest_filename FROM employee WHERE pk_no = e.emp_no) AS destFilename
-    FROM 
+    SELECT  * FROM 
         EMPLOYEE E 
         JOIN DEPARTMENT D ON e.dept_code = d.dept_code
         JOIN ATO_JOB j ON e.job_code = j.job_code
@@ -123,9 +118,9 @@
         )
         AND (
             CASE 
-                WHEN #{searchType} = 'dept_name' THEN d.dept_name LIKE '%' || #{searchKeyword} || '%'
-                WHEN #{searchType} = 'job_name' THEN j.job_name LIKE '%' || #{searchKeyword} || '%'
-                WHEN #{searchType} = 'emp_name' THEN e.emp_name LIKE '%' || #{searchKeyword} || '%'
+                WHEN #{searchType} = 'deptName' THEN d.dept_name LIKE '%' || #{searchKeyword} || '%'
+                WHEN #{searchType} = 'jobName' THEN j.job_name LIKE '%' || #{searchKeyword} || '%'
+                WHEN #{searchType} = 'empName' THEN e.emp_name LIKE '%' || #{searchKeyword} || '%'
                 ELSE 1
             END
         )

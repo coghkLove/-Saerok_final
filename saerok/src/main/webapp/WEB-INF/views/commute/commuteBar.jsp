@@ -202,21 +202,6 @@ function getStartAndEndDateOfWeek() {
 	  const start = startDate.getFullYear() + "." + (startDate.getMonth() + 1) + "." + startDate.getDate();
 	  const end = endDate.getFullYear() + "." + (endDate.getMonth() + 1) + "." + endDate.getDate();
 	  
-/* 	  $.ajax({
-		  url : "${path }/commute/weekTotalTime.do",
-		  data : {start, end},
-		  contentType : "application/json; charset=utf-8",
-		  success(data){
-			  console.log(data);
-			  const {totalMonthOverTime ,totalMonthTime, weekOverTime ,weekTotalTime} = data;
-			  const totalWorkTime = document.querySelector("#totalwork-time");
-			  
-			  totalWorkTime.textContent = changeWorkTime(weekTotalTime + weekOverTime);
-		  },
-		  error : console.log
-		  
-	  });
-} */
 $.ajax({
 	  url : "${path }/commute/weekTotalTime.do",
 	  data: { start, end },

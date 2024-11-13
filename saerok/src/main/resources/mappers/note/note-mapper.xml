@@ -91,7 +91,7 @@
     </update>
     
     <select id="getNoteByNoteNo" parameterType="int" resultMap="receivedNotes">
-    	SELECT * FROM note WHERE NOTE_NO = #{noteNo}
-   	</select>
+       SELECT * FROM note WHERE NOTE_NO = #{noteNo}
+      </select>
     
 </mapper>

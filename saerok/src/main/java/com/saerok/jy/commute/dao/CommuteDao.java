@@ -18,7 +18,6 @@ Commute selectCommuteList(SqlSession session, Map<String, Object> param);
 
 List<Commute> selectCommuteWorkList(SqlSession session, Map<String, Object> param);
 
-
 // 금일 출근 기록이 있는지 확인
 Commute selectExsistWorkInList(SqlSession session, Map<String, Object> param);
 
@@ -60,7 +59,5 @@ int checkStartwork(SqlSession session, Map<String, Object> param);
 
 int updateStartWork(SqlSession session, Map<String, Object> param);
 
-
-//public ArrayList<Commute> selectCommuteStatusList(SqlSession session,int commuteNo);
 
 }
